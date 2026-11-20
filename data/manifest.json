@@ -1,0 +1,112 @@
+{
+  "pack": "edge-reconciliation",
+  "tables": {
+    "point_mappings": {
+      "columns": [
+        "recorder",
+        "meter",
+        "point",
+        "from",
+        "to"
+      ],
+      "rows": 2,
+      "sha256": "7d8350c0e324c64f8f3a7867bc1dd529d84d7fc2b9f47bf541ad3d0049930bfb"
+    },
+    "region_manifests": {
+      "columns": [
+        "wave",
+        "manifest",
+        "point",
+        "from",
+        "to",
+        "complete",
+        "supersedes"
+      ],
+      "rows": 3,
+      "sha256": "78dabd58599e40594d5e3720ebdf666dc6d7f9d0e7e45c8ac345c223fb17d3c4"
+    },
+    "region_rows": {
+      "columns": [
+        "wave",
+        "manifest",
+        "at",
+        "kind",
+        "kwh"
+      ],
+      "rows": 6,
+      "sha256": "e90f8592b514f164155516394950c74bb238e53d2c76838dfc859130f493d317"
+    },
+    "edge_manifests": {
+      "columns": [
+        "wave",
+        "batch",
+        "recorder",
+        "meter",
+        "first_shard",
+        "last_shard",
+        "start_tick",
+        "end_tick"
+      ],
+      "rows": 2,
+      "sha256": "3f36909e4f72c04985e2e266e390f01ad7b0811ff049a9ca069028c38bee9b8e"
+    },
+    "edge_fragments": {
+      "columns": [
+        "wave",
+        "batch",
+        "shard",
+        "lo",
+        "hi",
+        "state",
+        "kwh"
+      ],
+      "rows": 6,
+      "sha256": "68ec1fa0c16d7ce561bf086db083f629fc0836c5d77b558e761ed6ffd7ab2375"
+    },
+    "clock_revisions": {
+      "columns": [
+        "wave",
+        "recorder",
+        "rev",
+        "tick_from",
+        "tick_to",
+        "origin_tick",
+        "anchor",
+        "offset"
+      ],
+      "rows": 3,
+      "sha256": "75c78773346ede87a999c36216ef3da46095195aedc580a3513d2bc14c651010"
+    },
+    "downstream_requests": {
+      "columns": [
+        "wave",
+        "request",
+        "point",
+        "from",
+        "to"
+      ],
+      "rows": 3,
+      "sha256": "3ba98dfc2c0d55501f0641e0a3aae45c56d8fcddffd71d918720ee440735cbba"
+    }
+  },
+  "references": [
+    [
+      "region_rows",
+      "manifest",
+      "region_manifests",
+      "manifest"
+    ],
+    [
+      "edge_fragments",
+      "batch",
+      "edge_manifests",
+      "batch"
+    ],
+    [
+      "clock_revisions",
+      "recorder",
+      "point_mappings",
+      "recorder"
+    ]
+  ]
+}

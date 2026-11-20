@@ -1,0 +1,4 @@
+wave,recorder,rev,tick_from,tick_to,origin_tick,anchor,offset
+2,POD-A,1,0,2400,0,2026-11-18T06:00:00Z,0
+4,POD-A,2,1200,2400,1200,2026-11-18T06:20:00Z,600
+4,POD-B,1,0,600,0,2026-11-18T06:20:00Z,0

@@ -1,0 +1,7 @@
+wave,batch,shard,lo,hi,state,kwh
+2,L01,10,0,600,value,40
+2,L01,11,600,1200,empty,0
+2,L01,13,1800,2400,value,51
+3,L01,12,1200,1800,value,46
+4,L02,1,0,600,value,65
+6,L01,13,1800,2400,value,51
